@@ -9,7 +9,7 @@ authorizations: &AUTHORIZATIONS
     
 test:
   host: localhost
-  port: 3389
+  port: 389
   attribute: uid
   base: ou=people,dc=test,dc=com
   admin_user: cn=admin,dc=test,dc=com

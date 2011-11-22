@@ -6,19 +6,19 @@ class ActiveSupport::TestCase
   
   def ldap_connect_string
     if ENV["LDAP_SSL"]
-      "-x -H ldaps://localhost:3389 -D 'cn=admin,dc=test,dc=com' -w secret"
+      "-x -H ldaps://localhost:389 -D 'cn=admin,dc=test,dc=com' -w secret"
     else
-      "-x -h localhost -p 3389 -D 'cn=admin,dc=test,dc=com' -w secret"
+      "-x -h localhost -p 389 -D 'cn=admin,dc=test,dc=com' -w secret"
     end
   end
   
   def reset_ldap_server!
     if ENV["LDAP_SSL"]
-      `ldapmodify #{ldap_connect_string} -f ../ldap/clear.ldif`
-      `ldapadd #{ldap_connect_string} -f ../ldap/base.ldif`
+      `sudo ldapmodify #{ldap_connect_string} -f ../ldap/clear.ldif`
+      `sudo ldapadd #{ldap_connect_string} -f ../ldap/base.ldif`
     else
-      `ldapmodify #{ldap_connect_string} -f ../ldap/clear.ldif`
-      `ldapadd #{ldap_connect_string} -f ../ldap/base.ldif`
+      `sudo ldapmodify #{ldap_connect_string} -f ../ldap/clear.ldif`
+      `sudo ldapadd #{ldap_connect_string} -f ../ldap/base.ldif`
     end
   end
   
