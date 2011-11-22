@@ -15,7 +15,7 @@ group :test do
   gem "database_cleaner"
   gem "capybara"
   gem "launchy"
-  gem "ladle"
+  gem "fakeldap"
 end
 
 group :darwin do

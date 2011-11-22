@@ -11,7 +11,7 @@ authorizations: &AUTHORIZATIONS
     
 test: &TEST
   host: <%= "localhost" %>
-  port: 389
+  port: 3389
   attribute: cn
   base: <%= "ou=people,#{@base}" %>
   admin_user: <%= "cn=admin,#{@base}" %>
